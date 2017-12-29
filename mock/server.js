@@ -3,6 +3,7 @@ const Router = require('koa-router')
 const path = require('path')
 const static = require('koa-static')
 const cors = require('koa2-cors');
+const bodyParser = require('koa-body')();
 
 const app = new Koa()
 const router = new Router()
@@ -75,7 +76,7 @@ router.get('/data/detail/info/:id', async (ctx) => {
     ctx.body = filterData
 })
 
-// 详情页 评论
+// 详情页 评论列表
 const CommentData = require('./detail/comment')
 router.get('/data/detail/comment/:id/:page', async (ctx) => {
     const pageSize = 2
@@ -86,6 +87,38 @@ router.get('/data/detail/comment/:id/:page', async (ctx) => {
         result: filterData.slice(0, page * pageSize),
         hasMore: hasMore
     }
+})
+
+// 登录
+router.post('/data/login', bodyParser, async (ctx) => {
+    const { username, password } = ctx.request.body
+    if (username === 'linxun' && password === 'linxun') {
+        ctx.body = {
+            status: 1,
+            msg: '登录成功'
+        }
+    } else {
+        ctx.body = {
+            status: 0,
+            msg: '用户名或密码错误'
+        }
+    }
+})
+
+// 收藏
+router.get('/data/collect/:id', async (ctx) => {
+    let { id } = ctx.params
+    id = parseInt(id, 10)
+    const filterData = detailData.filter(item => 
+        item.id === id
+    )
+    ctx.body = filterData
+})
+
+// 订单
+const orderListData = require('./user/orderList')
+router.get('/data/orderList', async (ctx) => {
+    ctx.body = orderListData
 })
 
 // 加载路由中间件

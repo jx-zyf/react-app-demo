@@ -14,7 +14,7 @@ class City extends Component {
     changeCity = (cityname) => {
         const { userinfoActions: { update }, history } = this.props
         // 更新redux城市信息
-        update(cityname)
+        update({cityname: cityname})
         // 将城市信息存到localStorage
         localStorage.setItem('cityname', cityname)
         // 回到首页

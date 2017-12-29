@@ -5,7 +5,7 @@ import './style.less'
 
 class ListItem extends React.Component {
     render() {
-        const data = this.props.data
+        const { data, needComment } = this.props
         return (
             <div className="list-item clear-fix">
                 <Link to={'/detail/' + data.id}>
@@ -22,7 +22,10 @@ class ListItem extends React.Component {
                         </p>
                         <div className="item-price-container clear-fix">
                             <span className="price float-left">￥{data.price}</span>
-                            <span className="mumber float-right">已售{data.mumber}</span>
+                            {needComment
+                                ? <span className="comment float-right">评价</span>
+                                : <span className="mumber float-right">已售{data.mumber}</span>
+                            }
                         </div>
                     </div>
                 </Link>

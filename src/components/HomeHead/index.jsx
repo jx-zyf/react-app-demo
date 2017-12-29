@@ -17,9 +17,9 @@ class HomeHead extends Component {
                     </Link>
                 </div>
                 <div className="home-header-right float-right">
-                    {/* <Link to="/Login"> */}
+                    <Link to="/login">
                         <i className="icon-user"></i>
-                    {/* </Link> */}
+                    </Link>
                 </div>
                 <div className="home-header-middle">
                     <div className="search-container">

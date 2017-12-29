@@ -1,6 +1,7 @@
 {
   "name": "new",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -27,6 +28,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.2",
     "koa2-cors": "^2.0.5",

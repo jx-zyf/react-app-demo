@@ -16,10 +16,6 @@ function obj2params(obj) {
     for (item in obj) {
         result += '&' + item + '=' + encodeURIComponent(obj[item]);
     }
-    console.log(result)
-    // if (result) {
-    //     result = result.slice(1);
-    // }
     result = result.length > 0 ? result.slice(1) : result;
     return result;
 }
@@ -27,7 +23,7 @@ function obj2params(obj) {
 export function post(url, paramsObj) {
     return fetch(url, {
         method: 'POST',
-        credentials: 'include',
+        // credentials: 'include',
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/x-www-form-urlencoded'

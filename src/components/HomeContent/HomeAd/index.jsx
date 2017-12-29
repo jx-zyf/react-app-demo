@@ -7,7 +7,7 @@ class HomeAd extends Component {
         const { data } = this.props
         return (
             <div id="home-ad">
-                <h2>超值特惠</h2>
+                <h2 className="sub_title">超值特惠</h2>
                 {data.length > 0
                     ? <div className="ad-container clear-fix">
                         {
@@ -22,7 +22,7 @@ class HomeAd extends Component {
                             })
                         }
                     </div>
-                    : <div className="ad-container clear-fix">加载中...</div>
+                    : <div className="ad-container clear-fix tishi">加载中...</div>
                 }
             </div>
         );

@@ -1,1 +1,4 @@
 export const USERINFO_UPDATE = 'USERINFO_UPDATE'
+export const TOGGLE_FLAG = 'TOGGLE_FLAG'
+
+export const TOOGLE_STORE = 'TOOGLE_STORE'
